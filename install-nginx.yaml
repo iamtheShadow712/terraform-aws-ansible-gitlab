@@ -1,0 +1,22 @@
+-
+  name: Playbook to install nginx 
+  hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+    - name: Install nginx
+      apt:
+        update_cache: true
+        name: nginx
+        state: latest
+
+    - name: Start nginx
+      service:
+        name: nginx
+        enabled: true
+        state: started
+
+    - name: copy custom index.html file
+      copy:
+        src: ./index.html
+        dest: /var/www/html/index.html

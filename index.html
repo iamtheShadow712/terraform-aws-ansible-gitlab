@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Congrats</title>
+    <style type="text/tailwindcss">
+        @theme{
+            --color-clifford: #da373d;
+
+            --animate-zoom-in-out: zoom-in-out 1s ease-in-out infinite;
+
+            @keyframes zoom-in-out {
+                0%, 100%{
+                    transform: scale(2)
+                }
+                50%{
+                    transform: scale(3)
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="h-screen flex w-screen">
+        <div class="mx-auto mt-20 text-clifford">
+            <h1 id="congrats-msg"
+                class="text-center text-5xl uppercase animate-zoom-in-out transition-colors duration-500">
+                Congratulation
+            </h1>
+            <h1 class="text-center text-2xl mt-20">Infrastructure successfully created</h1>
+        </div>
+    </main>
+
+    <script>
+        const message = document.getElementById('congrats-msg')
+        const color_list = ["text-green-500", "text-blue-500", "text-green-500", "text-yellow-500", "text-purple-500", "text-pink-500", "text-gray-500", "text-black", "text-white", "text-orange-500"];
+        let index = 0
+        setInterval(() => {
+            message.classList.remove(color_list[index])
+            index = (index + 1) % color_list.length;
+            message.classList.add(color_list[index])
+        }, 200)
+    </script>
+</body>
+
+</html>
