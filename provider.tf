@@ -9,8 +9,8 @@ terraform {
       version = "2.5.2"
     }
   }
-  # backend "http" {
-  # }
+  backend "http" {
+  }
 }
 
 provider "aws" {
