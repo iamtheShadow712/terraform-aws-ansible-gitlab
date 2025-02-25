@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+  - destroy
+
+build_job:
+  stage: build
+  script:
+    - echo "BUILD"
+
+test_job:
+  stage: test
+  script:
+    - echo "TEST"
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "DEPLOY"
+
+destroy_job:
+  stage: destroy
+  script:
+    - echo "DESTROY"
